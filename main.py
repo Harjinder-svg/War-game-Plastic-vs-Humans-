@@ -1,10 +1,20 @@
 #global __import__
 import random
+import time
 
 #Functions of the main menu
 # Shows spacing between the main menu if the player inputs something wrong
 def cls():
-    print("\n" * 50) 
+    print("\n" * 50)
+
+def image():
+    print("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/")
+    print("<       Main menu of the game        >")
+    print("<       *********************        >")
+    print("<    War between plastic and humans  >")
+    print("<    ******************************  >")
+    print("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/")
+    print()
 
 def Main_room():
   Main_room_options = ["1", "2", "3"]
@@ -12,11 +22,11 @@ def Main_room():
   while user_choice not in Main_room_options:
     
     print(" ")
-    print('''In this post apocalypse where plastic has taken over the world, Your decison will be made if you would either side with the plastic or the human resitstance againest plastic. The third option is you quitting the game, knowing your fate has not even been decided for the game.
+    print('''Hello player, this game is about war againest plastic and humans. You as the player, will decide on which side you would want to take, Plastic or humans. Choosing the plastic will send you to war while choosing the humans will let you know about the enviroment they are in.
     
-  1) Plastic regime
-  2) Human restitance ( I personally choose this one ;] )
-  3) Where is the nearest exit.''' )
+  1) Plastic side
+  2) Human side ( I personally choose this one ;] )
+  3) Where's the nearest exit.''' )
 
     print(" ")
     user_choice = str(input("Enter the option number for your fate (!!suspense music!!): "))
@@ -100,6 +110,7 @@ def Minigame():
     rps_list = ["fight", "retreat", "defend"]
 
     # Instructions go here...
+    # Introduction of the minigame
     intro_heading ="///         War againest the humans - Instructions          ///"
     feedback(intro_heading, "/")
     print("For each game you play, either choose the number of battles or press <enter> for \n"
@@ -180,7 +191,7 @@ def Minigame():
                 character = "#"
 
 
-            result_statement = "User: {}    |    Computer: {}    |    Result: {}".format(user_choice, comp_choice, result)
+            result_statement = "Plastic: {}    |    Humans: {}    |    Result: {}".format(user_choice, comp_choice, result)
             print()
             # Output result
             feedback(result_statement, character)
@@ -203,35 +214,64 @@ def Minigame():
         
 
 def Storygame():
-    print("\n \n You have chosen to side with the humans.")
-    print("\n Nice one soldier :] ")
+    print("You have chosen to side with the humans.")
+    print("Nice one soldier :] ")
+    print()
 
     # importing random for the choices inputed by the player
   
 
     # Intro of the game
+
+
+    def title():
+        print("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/")
+        time.sleep(1)
+        print("<            Humans side             >")
+        time.sleep(1)
+        print("<           *************            >")
+        time.sleep(1)
+        print("<      Short story about the war     >")
+        time.sleep(1)
+        print("<      *************************     >")
+        time.sleep(1)
+        print("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/")
+        time.sleep(1)
+        print()
+
     def Intro():
+        print("Hold up player. My mistake but I want to mention that for this side of the story, you are only getting to choose once. The rest will just follow like a story. Ok bye :} ")
+        time.sleep(8)
         print("Welcome to the war cadit.")
-        print(" ")
-        print(" \n Where plastic has consumed us to live in barrows while the skies fills with corruption.")
-        print(" \n The other cadits has left their posts to scanvage amongest the wasteland for resoucres.")
-        print(" \n Your task will be to investigate and record any findings about the enviroment outside to see how much damage has been cause ")
-        print(" \n Choose any path you wish to go cadit")
+        time.sleep(2)
+        print()
+        print("\n Where plastic has consumed us to live in barrows while the skies fills with corruption.")
+        time.sleep(4.5)
+        print("\n The other cadits has left their posts to scavenge amongest the wasteland for resources.")
+        time.sleep(4.5)
+        print("\n Your task will be to investigate and record any findings about the enviroment outside to see how much damage has been cause ")
+        time.sleep(5)
+        print("\n Now cadit, go adventure outside and report back once your done with the research.")
+        time.sleep(5)
+        print(" \n Which path do I want to take for my journey. ")
         print()
 
 
     def Path1():
         path = ""
         while path != "1" and path != "2":  #Inputing validations
-            path = input("Choose one of your paths shown? (1 or 2): ")
+            path = input("Choose one of the paths to take  (1 or 2): ")
 
         return path
     #The path decided by the player will follow with the story
     def Checkpath(Path1):
         print()
         print("You walk down this path through the radioactive forest with your suit")
+        time.sleep(5)
         print("You gaze upon the destruction plastic has wrecked across this world")
+        time.sleep(5)
         print("Pieces of plastic shrouds the trees, trapping their life while seeing the unfortunate creatures mutated or engulfing pieces of trash for survival.")
+        time.sleep(5)
         print()
 
         # Randomize the choice made by the player
@@ -240,12 +280,17 @@ def Storygame():
         if Path1 == str(correctPath):
             print()
             print("At the end of your journey, You realise that the world has to be changed in a greener atomsphere for the creatures and humans who inhabits on earth.")
+            time.sleep(5)
             print("You approach to a high cliff, gazing upon the rainbow coloured rivers to the trails of trash descending from the skies.")
+            time.sleep(5.5)
         else:
             print()
             print("While reaching back to headquarters with your finding, You found a busted robot on your trail.")
+            time.sleep(4)
             print("Damaged by the corrosive from the acid rains, geting up close, the robot suddenly spoke, saying one sentence over and over again. ")
+            time.sleep(4)
             print("Humans have brought their own down fall as their creation rises.")
+            time.sleep(4)
 
 
 
@@ -254,14 +299,17 @@ def Storygame():
     playAgain = "yes"
     # This will intiate the functions and decide for the player if they want to play again or not
     while playAgain == "yes" or playAgain == "y":
+        title()
         Intro()
         choice = Path1()
         Checkpath(choice)    #Choice will always be equal to "1" or "2"
         print()
-        playAgain = input("Do you want to play again (Continue by typing 'yes' or 'y'): ")
+        playAgain = input("Do you want to play again by typing yes or y or typing any keys to exit the game: ")
+        print()
 
 def leave_main_menu():
     print ("\n \n Well you are no fun")
 
 # Main program to start
+image()
 Main_room()
