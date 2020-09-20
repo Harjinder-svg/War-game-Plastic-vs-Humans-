@@ -7,6 +7,7 @@ import time
 def cls():
     print("\n" * 50)
 
+# This will be the title of the Main menu
 def image():
     print("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/")
     print("<       Main menu of the game        >")
@@ -20,11 +21,11 @@ def Main_room():
   Main_room_options = ["1", "2", "3"]
   user_choice =""
   while user_choice not in Main_room_options:
-    
+    # What will be said afterwards from the title and allowing the player look over their options
     print(" ")
-    print('''Hello player, this game is about war againest plastic and humans. You as the player, will decide on which side you would want to take, Plastic or humans. Choosing the plastic will send you to war while choosing the humans will let you know about the enviroment they are in.
+    print('''Hello player, this game is about war against plastic and humans. You as the player, will decide on which side you would want to take, Plastic or humans. Choosing the plastic will send you to war while choosing the humans will let you know about the enviroment they are in.
     
-  1) Plastic side
+  1) Plastic side (The game is soucred within Pap high, most of it is from the creator but adjusted for my topic)
   2) Human side ( I personally choose this one ;] )
   3) Where's the nearest exit.''' )
 
@@ -114,6 +115,7 @@ def Minigame():
     intro_heading ="///         War againest the humans - Instructions          ///"
     feedback(intro_heading, "/")
     print("For each game you play, either choose the number of battles or press <enter> for \n"
+          "This game is about you as the plastic to either defend for your people or attack the enemy bases.\n "
           "continuous battles. I would want to also clarify that you can end the game early by typing 'stop now'.\n"
           "\n"
           "When prompted choose fight / retreat / defend\n"
@@ -174,17 +176,17 @@ def Minigame():
                 rounds_drawn += 1
                 character = "-"
             elif user_choice == "fight" and comp_choice == "retreat":
-                result = "The enemy has fled. We have conquered their base"
+                result = "The enemy has fled. We have bombed their base"
                 character =":"
             elif user_choice == "retreat" and comp_choice == "defend":
                 result = "We managed to escape from the enemy unscaved, We will fight again in another time."
                 character =":"
-            elif user_choice == "retreat" and comp_choice == "fight":
-                result = "We managed to escape from the enemy with large causulaties. Our fallen brothers will not die in vain."
-                character = ":"
             elif user_choice == "Defend" and comp_choice == "retreat":
-                result = "They are retreating, the base is ours to conquer."
+                result = "They are retreating, We have survived their attacks."
                 character =":"
+            elif user_choice == "Defend" and comp_choice == "fight":
+                result = "They are fighting while we defend, We have withstand the enemys attack."
+                character = ":"
             else:
                 result = "The enemys has bested us. We must not lose AGAIN!!!"
                 rounds_lost += 1
@@ -266,27 +268,41 @@ def Storygame():
     #The path decided by the player will follow with the story
     def Checkpath(Path1):
         print()
-        print("You walk down this path through the radioactive forest with your suit")
+        print("\n You walk down this path through the radioactive forest with your suit")
         time.sleep(5)
-        print("You gaze upon the destruction plastic has wrecked across this world")
+        print("\n You gaze upon the destruction plastic has wrecked across this world")
         time.sleep(5)
-        print("Pieces of plastic shrouds the trees, trapping their life while seeing the unfortunate creatures mutated or engulfing pieces of trash for survival.")
+        print("\n Pieces of plastic shrouds the trees, trapping their life while seeing the unfortunate creatures mutated or engulfing pieces of trash for survival.")
         time.sleep(5)
+        print("\n Writing down on your pad as you walk through the path, you hear faint whimpering noise.")
+        time.sleep(4)
+        print("\n Cautious about where it is at, you peek through the bushes from where the noise was at.")
+        time.sleep(4)
+        print("\n You found a deer, scraped and cut, struggling to escape from his captive of plastic wires.")
+        time.sleep(4.5)
+        print("\n Noticing the injured creature, you walk to him carefully")
+        time.sleep(3.5)
+        print("\n Startled at first, he layed his head down as you start cutting the wires")
+        time.sleep(3)
+        print("\n Once freed, you examined it and wondered how different it looked from being hairless to having green eyes looking deeply at you")
+        time.sleep(5)
+        print("\n After the event with the mutated animal, you continued to walk through ")
+        time.sleep(4.5)
         print()
 
         # Randomize the choice made by the player
         correctPath = random.randint(1, 2,)
 
         if Path1 == str(correctPath):
-            print()
             print("At the end of your journey, You realise that the world has to be changed in a greener atomsphere for the creatures and humans who inhabits on earth.")
             time.sleep(5)
+            print()
             print("You approach to a high cliff, gazing upon the rainbow coloured rivers to the trails of trash descending from the skies.")
             time.sleep(5.5)
         else:
-            print()
             print("While reaching back to headquarters with your finding, You found a busted robot on your trail.")
             time.sleep(4)
+            print()
             print("Damaged by the corrosive from the acid rains, geting up close, the robot suddenly spoke, saying one sentence over and over again. ")
             time.sleep(4)
             print("Humans have brought their own down fall as their creation rises.")
